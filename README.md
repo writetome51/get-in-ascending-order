@@ -1,1 +1,1 @@
-A function to be called inside a loop that iterates through an array of numbers.
+A function that takes an array of numbers and puts them in ascending order.
