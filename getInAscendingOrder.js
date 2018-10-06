@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var inAscendingOrder_notInAscendingOrder_1 = require("@writetome51/number-analysis-basic/inAscendingOrder_notInAscendingOrder");
 var getAverage_1 = require("@writetome51/get-sum-average-product/getAverage");
+var isArray_notArray_1 = require("basic-data-handling/isArray_notArray");
 /*****
  This sorting function is extremely fast, even with huge array.
  The sorting algorithm it uses is 'quick-sort'.  It finds the average value of the array, then moves all numbers
@@ -10,6 +11,8 @@ var getAverage_1 = require("@writetome51/get-sum-average-product/getAverage");
  on them until they are both sorted.
  *****/
 function getInAscendingOrder(numbers) {
+    if (isArray_notArray_1.isArray(numbers) && numbers.length === 1)
+        return numbers;
     var average = getAverage_1.getAverage(numbers);
     var dividedLists = getLessThanAverage_and_greaterThanOrEqualToAverage(average, numbers);
     // It's possible that some lists are now sorted, or only contain many instances of one number:

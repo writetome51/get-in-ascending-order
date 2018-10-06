@@ -1,6 +1,6 @@
 {
   "name": "@writetome51/get-in-ascending-order",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A function that takes an array of numbers and puts them in ascending order",
   "main": "",
   "scripts": {
@@ -13,7 +13,9 @@
   "author": "Steve Thompson",
   "license": "MIT",
   "dependencies": {
+    "basic-data-handling": "latest",
     "@writetome51/number-analysis-basic": "latest",
-    "@writetome51/get-sum-average-product": "latest"
+    "@writetome51/get-sum-average-product": "latest",
+    "@writetome51/array-get-shuffled": "latest"
   }
 }

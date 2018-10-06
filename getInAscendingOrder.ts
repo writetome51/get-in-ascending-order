@@ -1,6 +1,7 @@
 import { notInAscendingOrder } 
 	from '@writetome51/number-analysis-basic/inAscendingOrder_notInAscendingOrder';
 import { getAverage } from '@writetome51/get-sum-average-product/getAverage';
+import {isArray} from 'basic-data-handling/isArray_notArray';
 
 
 /*****
@@ -12,6 +13,7 @@ import { getAverage } from '@writetome51/get-sum-average-product/getAverage';
  *****/
 
 export function getInAscendingOrder(numbers): number[] {
+	if (isArray(numbers) && numbers.length === 1) return numbers;
 	let average = getAverage(numbers);
 	let dividedLists = getLessThanAverage_and_greaterThanOrEqualToAverage(average, numbers);
 
