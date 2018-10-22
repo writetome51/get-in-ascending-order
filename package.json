@@ -1,6 +1,6 @@
 {
   "name": "@writetome51/get-in-ascending-order",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A function that takes an array of numbers and puts them in ascending order",
   "main": "index.js",
   "scripts": {
