@@ -1,4 +1,4 @@
-import { getShuffled } from '@writetome51/array-get-shuffled/getShuffled';
+import { getShuffled } from '@writetome51/array-get-shuffled';
 import { getInAscendingOrder } from './getInAscendingOrder';
 
 

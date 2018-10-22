@@ -2,7 +2,7 @@
   "name": "@writetome51/get-in-ascending-order",
   "version": "1.0.1",
   "description": "A function that takes an array of numbers and puts them in ascending order",
-  "main": "",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -12,10 +12,13 @@
   ],
   "author": "Steve Thompson",
   "license": "MIT",
+  "devDependencies": {
+    "@writetome51/array-get-shuffled": "latest"
+  },
   "dependencies": {
     "basic-data-handling": "latest",
-    "@writetome51/number-analysis-basic": "latest",
-    "@writetome51/get-sum-average-product": "latest",
-    "@writetome51/array-get-shuffled": "latest"
+    "@writetome51/array-get-merged-arrays": "latest",
+    "@writetome51/in-ascending-order": "latest",
+    "@writetome51/get-sum-average-product": "latest"
   }
 }

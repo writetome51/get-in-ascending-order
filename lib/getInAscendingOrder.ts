@@ -1,7 +1,7 @@
-import { notInAscendingOrder } 
-	from '@writetome51/number-analysis-basic/inAscendingOrder_notInAscendingOrder';
-import { getAverage } from '@writetome51/get-sum-average-product/getAverage';
-import {isArray} from 'basic-data-handling/isArray_notArray';
+import { notInAscendingOrder } from '@writetome51/in-ascending-order';
+import { getAverage } from '@writetome51/get-sum-average-product';
+import { isArray } from 'basic-data-handling/isArray_notArray';
+import { getMergedArrays } from '@writetome51/array-get-merged-arrays/getMergedArrays';
 
 
 /*****
@@ -20,7 +20,7 @@ export function getInAscendingOrder(numbers): number[] {
 	// It's possible that some lists are now sorted, or only contain many instances of one number:
 	dividedLists = getInAscendingOrder_ifTheyAreStillNot(dividedLists);
 
-	return getConcatenated(dividedLists);
+	return getMergedArrays(dividedLists);
 
 
 	function getLessThanAverage_and_greaterThanOrEqualToAverage(average, numbers) {
@@ -41,12 +41,6 @@ export function getInAscendingOrder(numbers): number[] {
 			}
 		}
 		return lists;
-	}
-
-
-	function getConcatenated(arrays) {
-		let emptyArray = [];
-		return emptyArray.concat(...arrays);
 	}
 
 
