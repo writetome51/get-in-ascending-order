@@ -1,17 +1,28 @@
 {
   "name": "@writetome51/get-in-ascending-order",
-  "version": "1.0.2",
-  "description": "A function that takes an array of numbers and puts them in ascending order",
+  "version": "1.0.3",
+  "description": "Function takes an array of numbers and returns new array with numbers in ascending order",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/writetome51/get-in-ascending-order.git"
+  },
+
   "keywords": [
     "numbers",
-    "sorting"
+    "sorting",
+    "order",
+    "ascending"
   ],
   "author": "Steve Thompson",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/writetome51/get-in-ascending-order/issues"
+  },
+  "homepage": "https://github.com/writetome51/get-in-ascending-order#readme",
   "devDependencies": {
     "@writetome51/array-get-shuffled": "latest"
   },
@@ -19,6 +30,7 @@
     "basic-data-handling": "latest",
     "@writetome51/array-get-merged-arrays": "latest",
     "@writetome51/in-ascending-order": "latest",
-    "@writetome51/get-sum-average-product": "latest"
+    "@writetome51/get-sum-average-product": "latest",
+    "@writetome51/array-get-copy": "latest"
   }
 }

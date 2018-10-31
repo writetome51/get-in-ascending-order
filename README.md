@@ -1,4 +1,4 @@
-A function that takes an array of numbers and puts them in ascending order.
+Function takes an array of numbers and returns new array with numbers in ascending order.
 
 Example:
 
