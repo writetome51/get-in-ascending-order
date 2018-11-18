@@ -23,13 +23,13 @@
   },
   "homepage": "https://github.com/writetome51/get-in-ascending-order#readme",
   "devDependencies": {
-    "@writetome51/array-get-shuffled": "latest"
+    "@writetome51/array-get-shuffled": "~1.0.3"
   },
   "dependencies": {
-    "basic-data-handling": "latest",
-    "@writetome51/array-get-merged-arrays": "latest",
-    "@writetome51/in-ascending-order": "latest",
-    "@writetome51/get-sum-average-product": "latest",
-    "@writetome51/array-get-copy": "latest"
+    "basic-data-handling": "~1.0.13",
+    "@writetome51/array-get-merged-arrays": "~1.1.0",
+    "@writetome51/in-ascending-order": "~1.0.0",
+    "@writetome51/get-sum-average-product": "~1.0.3",
+    "@writetome51/array-get-copy": "~1.1.0"
   }
 }
