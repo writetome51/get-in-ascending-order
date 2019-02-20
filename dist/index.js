@@ -1,10 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+var isArray_notArray_1 = require("basic-data-handling/isArray_notArray");
+var array_get_merged_arrays_1 = require("@writetome51/array-get-merged-arrays");
 var in_ascending_order_1 = require("@writetome51/in-ascending-order");
 var get_sum_average_product_1 = require("@writetome51/get-sum-average-product");
 var array_get_copy_1 = require("@writetome51/array-get-copy");
-var isArray_notArray_1 = require("basic-data-handling/isArray_notArray");
-var array_get_merged_arrays_1 = require("@writetome51/array-get-merged-arrays");
 /*****
  Returns a new array with numbers in ascending order.
  The sorting algorithm :  It finds the average value of the numbers, then moves all numbers less than

@@ -1,8 +1,8 @@
+import { isArray } from 'basic-data-handling/isArray_notArray';
+import { getMergedArrays } from '@writetome51/array-get-merged-arrays';
 import { notInAscendingOrder } from '@writetome51/in-ascending-order';
 import { getAverage } from '@writetome51/get-sum-average-product';
 import { getCopy } from '@writetome51/array-get-copy';
-import { isArray } from 'basic-data-handling/isArray_notArray';
-import { getMergedArrays } from '@writetome51/array-get-merged-arrays';
 
 
 /*****

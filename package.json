@@ -1,10 +1,11 @@
 {
   "name": "@writetome51/get-in-ascending-order",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Function takes an array of numbers and returns new array with numbers in ascending order",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
