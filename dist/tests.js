@@ -75,6 +75,3 @@ if (result.length === 100 && result[0] === 1 && result[result.length - 1] === 10
 }
 else
     console.log('test 3 failed');
-numbers = [10.2, 6.15, 44.02, 2.25, 21.1, 66.3, 32.2, 22.2, 33.2, 44.025, 11.1];
-var orderedNumbers = index_1.getInAscendingOrder(numbers);
-console.log(orderedNumbers);
