@@ -11,43 +11,43 @@ var shuffledNumbers = array_get_shuffled_1.getShuffled(numbers);
 // Test 1: make sure it triggers errors when passing incorrect values:
 var errorsTriggered = 0;
 try {
-    var ordered = index_1.getInAscendingOrder();
+    var ordered = index_1.getInNumericOrder();
 }
 catch (e) {
     ++errorsTriggered;
 }
 try {
-    var ordered = index_1.getInAscendingOrder('0');
+    var ordered = index_1.getInNumericOrder('0');
 }
 catch (e) {
     ++errorsTriggered;
 }
 try {
-    var ordered = index_1.getInAscendingOrder('');
+    var ordered = index_1.getInNumericOrder('');
 }
 catch (e) {
     ++errorsTriggered;
 }
 try {
-    var ordered = index_1.getInAscendingOrder([]);
+    var ordered = index_1.getInNumericOrder([]);
 }
 catch (e) {
     ++errorsTriggered;
 }
 try {
-    var ordered = index_1.getInAscendingOrder({});
+    var ordered = index_1.getInNumericOrder({});
 }
 catch (e) {
     ++errorsTriggered;
 }
 try {
-    var ordered = index_1.getInAscendingOrder(false);
+    var ordered = index_1.getInNumericOrder(false);
 }
 catch (e) {
     ++errorsTriggered;
 }
 try {
-    var ordered = index_1.getInAscendingOrder(['', 1]);
+    var ordered = index_1.getInNumericOrder(['', 1]);
 }
 catch (e) {
     ++errorsTriggered;
@@ -59,7 +59,7 @@ else
 // Test 2: If array with only 1 number is passed, it should return it without error:
 var errorTriggered = false;
 try {
-    var result = index_1.getInAscendingOrder([4]);
+    var result = index_1.getInNumericOrder([4]);
 }
 catch (e) {
     errorTriggered = true;
@@ -69,7 +69,7 @@ if (errorTriggered)
 else if (result.length === 1 && result[0] === 4)
     console.log('test 2 passed');
 // Test 3: make sure it sorts the shuffled numbers correctly:
-result = index_1.getInAscendingOrder(shuffledNumbers);
+result = index_1.getInNumericOrder(shuffledNumbers);
 if (result.length === 100 && result[0] === 1 && result[result.length - 1] === 100) {
     console.log('test 3 passed');
 }

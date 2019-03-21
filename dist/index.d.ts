@@ -5,4 +5,4 @@
  array.  Then it checks to see if both those two lists are now sorted.  If not, it recursively calls
  itself on them until they are both sorted.  Then they're merged into a single array.
  *****/
-export declare function getInAscendingOrder(numbers: number[]): number[];
+export declare function getInNumericOrder(numbers: number[]): number[];

@@ -1,6 +1,6 @@
 import { isArray } from 'basic-data-handling/isArray_notArray';
 import { getMergedArrays } from '@writetome51/array-get-merged-arrays';
-import { notInAscendingOrder } from '@writetome51/in-ascending-order';
+import { notInNumericOrder } from '@writetome51/in-numeric-order';
 import { getAverage } from '@writetome51/get-sum-average-product';
 import { getCopy } from '@writetome51/array-get-copy';
 
@@ -13,7 +13,7 @@ import { getCopy } from '@writetome51/array-get-copy';
  itself on them until they are both sorted.  Then they're merged into a single array.
  *****/
 
-export function getInAscendingOrder(numbers): number[] {
+export function getInNumericOrder(numbers): number[] {
 	// This line returns a copy because this function is expected to return an array independent
 	// of the array passed in.
 	if (isArray(numbers) && numbers.length === 1) return getCopy(numbers);
@@ -21,7 +21,7 @@ export function getInAscendingOrder(numbers): number[] {
 
 	// It's possible that some lists are now sorted, or only contain many instances of one number:
 	lessThanAverage_and_atLeastAverage =
-		getInAscendingOrder_ifTheyAreStillNot(lessThanAverage_and_atLeastAverage);
+		getInNumericOrder_ifTheyAreStillNot(lessThanAverage_and_atLeastAverage);
 
 	return getMergedArrays(lessThanAverage_and_atLeastAverage);
 
@@ -43,10 +43,10 @@ export function getInAscendingOrder(numbers): number[] {
 	}
 
 
-	function getInAscendingOrder_ifTheyAreStillNot(lists) {
+	function getInNumericOrder_ifTheyAreStillNot(lists) {
 		for (let i = 0; i < lists.length; ++i) {
-			if (notInAscendingOrder(lists[i])) {
-				lists[i] = getInAscendingOrder(lists[i]);
+			if (notInNumericOrder(lists[i])) {
+				lists[i] = getInNumericOrder(lists[i]);
 			}
 		}
 		return lists;

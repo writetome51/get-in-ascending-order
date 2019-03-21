@@ -1,7 +1,7 @@
 {
-  "name": "@writetome51/get-in-ascending-order",
-  "version": "1.0.6",
-  "description": "Function takes an array of numbers and returns new array with numbers in ascending order",
+  "name": "@writetome51/get-in-numeric-order",
+  "version": "1.0.0",
+  "description": "Function takes an array of numbers and returns new array with numbers in numeric order",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -9,27 +9,28 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/writetome51/get-in-ascending-order.git"
+    "url": "git+https://github.com/writetome51/get-in-numeric-order.git"
   },
   "keywords": [
     "numbers",
     "sorting",
+    "ascending",
     "order",
-    "ascending"
+    "numeric"
   ],
   "author": "Steve Thompson",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/writetome51/get-in-ascending-order/issues"
+    "url": "https://github.com/writetome51/get-in-numeric-order/issues"
   },
-  "homepage": "https://github.com/writetome51/get-in-ascending-order#readme",
+  "homepage": "https://github.com/writetome51/get-in-numeric-order#readme",
   "devDependencies": {
-    "@writetome51/array-get-shuffled": "~1.0.3"
+    "@writetome51/array-get-shuffled": "~1.0.5"
   },
   "dependencies": {
     "basic-data-handling": "~1.0.15",
     "@writetome51/array-get-merged-arrays": "~1.1.2",
-    "@writetome51/in-ascending-order": "~1.0.2",
+    "@writetome51/in-numeric-order": "~1.0.0",
     "@writetome51/get-sum-average-product": "~1.0.5",
     "@writetome51/array-get-copy": "~1.1.2"
   }

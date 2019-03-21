@@ -1,5 +1,5 @@
 import { getShuffled } from '@writetome51/array-get-shuffled';
-import { getInAscendingOrder } from './index';
+import { getInNumericOrder } from './index';
 
 
 
@@ -17,43 +17,43 @@ let shuffledNumbers = getShuffled(numbers);
 // Test 1: make sure it triggers errors when passing incorrect values:
 let errorsTriggered = 0;
 try {
-	let ordered = getInAscendingOrder();
+	let ordered = getInNumericOrder();
 }
 catch (e) {
 	++errorsTriggered;
 }
 try {
-	let ordered = getInAscendingOrder('0');
+	let ordered = getInNumericOrder('0');
 }
 catch (e) {
 	++errorsTriggered;
 }
 try {
-	let ordered = getInAscendingOrder('');
+	let ordered = getInNumericOrder('');
 }
 catch (e) {
 	++errorsTriggered;
 }
 try {
-	let ordered = getInAscendingOrder([]);
+	let ordered = getInNumericOrder([]);
 }
 catch (e) {
 	++errorsTriggered;
 }
 try {
-	let ordered = getInAscendingOrder({});
+	let ordered = getInNumericOrder({});
 }
 catch (e) {
 	++errorsTriggered;
 }
 try {
-	let ordered = getInAscendingOrder(false);
+	let ordered = getInNumericOrder(false);
 }
 catch (e) {
 	++errorsTriggered;
 }
 try {
-	let ordered = getInAscendingOrder(['', 1]);
+	let ordered = getInNumericOrder(['', 1]);
 }
 catch (e) {
 	++errorsTriggered;
@@ -66,7 +66,7 @@ else console.log('test 1 failed');
 // Test 2: If array with only 1 number is passed, it should return it without error:
 let errorTriggered = false;
 try{
-	var result = getInAscendingOrder([4]);
+	var result = getInNumericOrder([4]);
 }
 catch (e) {
 	errorTriggered = true;
@@ -76,7 +76,7 @@ else if (result.length === 1 && result[0] === 4) console.log('test 2 passed');
 
 
 // Test 3: make sure it sorts the shuffled numbers correctly:
-result = getInAscendingOrder(shuffledNumbers);
+result = getInNumericOrder(shuffledNumbers);
 if (result.length === 100 && result[0] === 1 && result[result.length - 1] === 100){
 	console.log('test 3 passed');
 }

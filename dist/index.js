@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var isArray_notArray_1 = require("basic-data-handling/isArray_notArray");
 var array_get_merged_arrays_1 = require("@writetome51/array-get-merged-arrays");
-var in_ascending_order_1 = require("@writetome51/in-ascending-order");
+var in_numeric_order_1 = require("@writetome51/in-numeric-order");
 var get_sum_average_product_1 = require("@writetome51/get-sum-average-product");
 var array_get_copy_1 = require("@writetome51/array-get-copy");
 /*****
@@ -12,7 +12,7 @@ var array_get_copy_1 = require("@writetome51/array-get-copy");
  array.  Then it checks to see if both those two lists are now sorted.  If not, it recursively calls
  itself on them until they are both sorted.  Then they're merged into a single array.
  *****/
-function getInAscendingOrder(numbers) {
+function getInNumericOrder(numbers) {
     // This line returns a copy because this function is expected to return an array independent
     // of the array passed in.
     if (isArray_notArray_1.isArray(numbers) && numbers.length === 1)
@@ -20,7 +20,7 @@ function getInAscendingOrder(numbers) {
     var lessThanAverage_and_atLeastAverage = getSeparatedInTwoArrays_usingAverageAsTheSeparator(numbers);
     // It's possible that some lists are now sorted, or only contain many instances of one number:
     lessThanAverage_and_atLeastAverage =
-        getInAscendingOrder_ifTheyAreStillNot(lessThanAverage_and_atLeastAverage);
+        getInNumericOrder_ifTheyAreStillNot(lessThanAverage_and_atLeastAverage);
     return array_get_merged_arrays_1.getMergedArrays(lessThanAverage_and_atLeastAverage);
     function getSeparatedInTwoArrays_usingAverageAsTheSeparator(numbers) {
         var average = get_sum_average_product_1.getAverage(numbers);
@@ -35,13 +35,13 @@ function getInAscendingOrder(numbers) {
         }
         return [lessThan, greaterThanOrEqualTo];
     }
-    function getInAscendingOrder_ifTheyAreStillNot(lists) {
+    function getInNumericOrder_ifTheyAreStillNot(lists) {
         for (var i = 0; i < lists.length; ++i) {
-            if (in_ascending_order_1.notInAscendingOrder(lists[i])) {
-                lists[i] = getInAscendingOrder(lists[i]);
+            if (in_numeric_order_1.notInNumericOrder(lists[i])) {
+                lists[i] = getInNumericOrder(lists[i]);
             }
         }
         return lists;
     }
 }
-exports.getInAscendingOrder = getInAscendingOrder;
+exports.getInNumericOrder = getInNumericOrder;
