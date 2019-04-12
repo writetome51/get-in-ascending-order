@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var isArray_notArray_1 = require("basic-data-handling/isArray_notArray");
+var is_array_not_array_1 = require("@writetome51/is-array-not-array");
 var array_get_merged_arrays_1 = require("@writetome51/array-get-merged-arrays");
 var in_numeric_order_1 = require("@writetome51/in-numeric-order");
 var get_sum_average_product_1 = require("@writetome51/get-sum-average-product");
@@ -15,7 +15,7 @@ var array_get_copy_1 = require("@writetome51/array-get-copy");
 function getInNumericOrder(numbers) {
     // This line returns a copy because this function is expected to return an array independent
     // of the array passed in.
-    if (isArray_notArray_1.isArray(numbers) && numbers.length === 1)
+    if (is_array_not_array_1.isArray(numbers) && numbers.length === 1)
         return array_get_copy_1.getCopy(numbers);
     var lessThanAverage_and_atLeastAverage = getSeparatedInTwoArrays_usingAverageAsTheSeparator(numbers);
     // It's possible that some lists are now sorted, or only contain many instances of one number:

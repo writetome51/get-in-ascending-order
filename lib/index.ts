@@ -1,4 +1,4 @@
-import { isArray } from 'basic-data-handling/isArray_notArray';
+import { isArray } from '@writetome51/is-array-not-array';
 import { getMergedArrays } from '@writetome51/array-get-merged-arrays';
 import { notInNumericOrder } from '@writetome51/in-numeric-order';
 import { getAverage } from '@writetome51/get-sum-average-product';
