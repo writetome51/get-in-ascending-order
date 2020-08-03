@@ -5,7 +5,7 @@ Each number inside `numbers` must be of type 'number', and must be a finite numb
 
 
 ## Examples
-```
+```js
 let numbers = [10, 6, 44, 2, 21, 66, 32, 22, 33, 44, 11];  
 getInNumericOrder(numbers);  
     // --> [ 2, 6, 10, 11, 21, 22, 32, 33, 44, 44, 66 ]
@@ -20,11 +20,7 @@ getInNumericOrder(numbers);
 `npm i  @writetome51/get-in-numeric-order`
 
 ## Loading
-```
-// if using TypeScript:
+```js
 import {getInNumericOrder} from '@writetome51/get-in-numeric-order'; 
-// if using ES5 JavaScript:
-var getInNumericOrder = 
-    require('@writetome51/get-in-numeric-order').getInNumericOrder;
 ```
 

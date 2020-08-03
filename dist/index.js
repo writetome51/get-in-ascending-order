@@ -1,10 +1,8 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-var is_array_not_array_1 = require("@writetome51/is-array-not-array");
-var array_get_merged_arrays_1 = require("@writetome51/array-get-merged-arrays");
-var in_numeric_order_1 = require("@writetome51/in-numeric-order");
-var get_sum_average_product_1 = require("@writetome51/get-sum-average-product");
-var array_get_copy_1 = require("@writetome51/array-get-copy");
+import { isArray } from '@writetome51/is-array-not-array';
+import { getMergedArrays } from '@writetome51/array-get-merged-arrays';
+import { notInNumericOrder } from '@writetome51/in-numeric-order';
+import { getAverage } from '@writetome51/get-sum-average-product';
+import { getArrayCopy } from '@writetome51/get-array-copy';
 /*****
  Returns a new array with numbers in ascending order.
  The sorting algorithm :  It finds the average value of the numbers, then moves all numbers less than
@@ -12,21 +10,18 @@ var array_get_copy_1 = require("@writetome51/array-get-copy");
  array.  Then it checks to see if both those two lists are now sorted.  If not, it recursively calls
  itself on them until they are both sorted.  Then they're merged into a single array.
  *****/
-function getInNumericOrder(numbers) {
+export function getInNumericOrder(numbers) {
     // This line returns a copy because this function is expected to return an array independent
     // of the array passed in.
-    if (is_array_not_array_1.isArray(numbers) && numbers.length === 1)
-        return array_get_copy_1.getCopy(numbers);
-    var lessThanAverage_and_atLeastAverage = getSeparatedInTwoArrays_usingAverageAsTheSeparator(numbers);
+    if (isArray(numbers) && numbers.length === 1)
+        return getArrayCopy(numbers);
+    let [lessThanAverage, atLeastAverage] = getLessThanAverage_and_atLeastAverage(numbers);
     // It's possible that some lists are now sorted, or only contain many instances of one number:
-    lessThanAverage_and_atLeastAverage =
-        getInNumericOrder_ifTheyAreStillNot(lessThanAverage_and_atLeastAverage);
-    return array_get_merged_arrays_1.getMergedArrays(lessThanAverage_and_atLeastAverage);
-    function getSeparatedInTwoArrays_usingAverageAsTheSeparator(numbers) {
-        var average = get_sum_average_product_1.getAverage(numbers);
-        return getLessThanAverage_and_greaterThanOrEqualToAverage(average, numbers);
-    }
-    function getLessThanAverage_and_greaterThanOrEqualToAverage(average, numbers) {
+    [lessThanAverage, atLeastAverage] =
+        getInNumericOrder_ifTheyAreStillNot([lessThanAverage, atLeastAverage]);
+    return getMergedArrays([lessThanAverage, atLeastAverage]);
+    function getLessThanAverage_and_atLeastAverage(numbers) {
+        let average = getAverage(numbers);
         for (var i = 0, lessThan = [], greaterThanOrEqualTo = []; i < numbers.length; ++i) {
             if (numbers[i] < average)
                 lessThan.push(numbers[i]);
@@ -36,12 +31,11 @@ function getInNumericOrder(numbers) {
         return [lessThan, greaterThanOrEqualTo];
     }
     function getInNumericOrder_ifTheyAreStillNot(lists) {
-        for (var i = 0; i < lists.length; ++i) {
-            if (in_numeric_order_1.notInNumericOrder(lists[i])) {
+        for (let i = 0; i < lists.length; ++i) {
+            if (notInNumericOrder(lists[i])) {
                 lists[i] = getInNumericOrder(lists[i]);
             }
         }
         return lists;
     }
 }
-exports.getInNumericOrder = getInNumericOrder;

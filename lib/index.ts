@@ -2,7 +2,7 @@ import { isArray } from '@writetome51/is-array-not-array';
 import { getMergedArrays } from '@writetome51/array-get-merged-arrays';
 import { notInNumericOrder } from '@writetome51/in-numeric-order';
 import { getAverage } from '@writetome51/get-sum-average-product';
-import { getCopy } from '@writetome51/array-get-copy';
+import { getArrayCopy } from '@writetome51/get-array-copy';
 
 
 /*****
@@ -16,23 +16,19 @@ import { getCopy } from '@writetome51/array-get-copy';
 export function getInNumericOrder(numbers): number[] {
 	// This line returns a copy because this function is expected to return an array independent
 	// of the array passed in.
-	if (isArray(numbers) && numbers.length === 1) return getCopy(numbers);
-	let lessThanAverage_and_atLeastAverage = getSeparatedInTwoArrays_usingAverageAsTheSeparator(numbers);
+	if (isArray(numbers) && numbers.length === 1) return getArrayCopy(numbers);
+	let [lessThanAverage, atLeastAverage] = getLessThanAverage_and_atLeastAverage(numbers);
 
 	// It's possible that some lists are now sorted, or only contain many instances of one number:
-	lessThanAverage_and_atLeastAverage =
-		getInNumericOrder_ifTheyAreStillNot(lessThanAverage_and_atLeastAverage);
+	[lessThanAverage, atLeastAverage]  =
+		getInNumericOrder_ifTheyAreStillNot( [ lessThanAverage, atLeastAverage ] );
 
-	return getMergedArrays(lessThanAverage_and_atLeastAverage);
+	return getMergedArrays([lessThanAverage, atLeastAverage]);
 
 
-	function getSeparatedInTwoArrays_usingAverageAsTheSeparator(numbers) {
+	function getLessThanAverage_and_atLeastAverage(numbers) {
 		let average = getAverage(numbers);
-		return getLessThanAverage_and_greaterThanOrEqualToAverage(average, numbers);
-	}
 
-
-	function getLessThanAverage_and_greaterThanOrEqualToAverage(average, numbers) {
 		for (var i = 0, lessThan = [], greaterThanOrEqualTo = []; i < numbers.length; ++i) {
 
 			if (numbers[i] < average) lessThan.push(numbers[i]);
