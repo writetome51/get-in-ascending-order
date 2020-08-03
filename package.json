@@ -1,13 +1,9 @@
 {
   "name": "@writetome51/get-in-numeric-order",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "Function takes an array of numbers and returns new array with numbers in numeric order",
   "type": "module",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "scripts": {
-    "build": "tsc"
-  },
+  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/writetome51/get-in-numeric-order.git"
@@ -29,10 +25,11 @@
     "@writetome51/array-get-shuffled": "^2.0.0"
   },
   "dependencies": {
-    "@writetome51/is-array-not-array": "^2.0.0",
     "@writetome51/array-get-merged-arrays": "^2.0.0",
-    "@writetome51/in-numeric-order": "^2.0.0",
+    "@writetome51/get-array-copy": "^1.0.0",
     "@writetome51/get-sum-average-product": "^2.0.0",
-    "@writetome51/get-array-copy": "^1.0.0"
+    "@writetome51/in-numeric-order": "^2.0.0",
+    "@writetome51/is-array-not-array": "^2.0.0",
+    "@writetome51/not": "^2.0.0"
   }
 }
