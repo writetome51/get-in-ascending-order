@@ -30,7 +30,7 @@ export function getInNumericOrder(numbers) {
 	function getLessThanAverage_and_atLeastAverage(numbers) {
 		let average = getAverage(numbers);
 
-		for (var i = 0, lessThan = [], atLeast = []; i < numbers.length; ++i) {
+		for (var i = 0, lessThan = [], atLeast = [], length = numbers.length; i < length; ++i) {
 			if (numbers[i] < average) lessThan.push(numbers[i]);
 			else atLeast.push(numbers[i]);
 		}
@@ -39,8 +39,7 @@ export function getInNumericOrder(numbers) {
 
 
 	function getInNumericOrder_ifTheyAreStillNot(lists) {
-		let length = lists.length;
-		for (let i = 0; i < length; ++i) {
+		for (let i = 0, length = lists.length; i < length; ++i) {
 			if (lists[i].length > 0 && not(inNumericOrder(lists[i]))) {
 				lists[i] = getInNumericOrder(lists[i]);
 			}

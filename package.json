@@ -1,6 +1,6 @@
 {
   "name": "@writetome51/get-in-numeric-order",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Function takes an array of numbers and returns new array with numbers in numeric order",
   "type": "module",
   "main": "index.js",
