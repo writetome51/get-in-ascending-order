@@ -87,10 +87,11 @@ else console.log('test 5 FAILED');
 numbers = [];
 i = 1000001;
 while (--i >= 1) numbers.push(i);
+console.log('beginning speed check:')
 console.time('speed check');
 result = getInNumericOrder(numbers);
 console.timeEnd('speed check');
 if (result.length === 1000000 && result[0] === 1 && result[result.length - 1] === 1000000)
 	console.log('Numbers sorted correctly in final test.\n' +
-		'If result of speed check is less than 600ms, test 6 passed');
+		'If result of speed check is less than 610ms, test 6 passed');
 else console.log('Numbers sorted incorrectly in final test');

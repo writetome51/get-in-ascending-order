@@ -39,7 +39,8 @@ export function getInNumericOrder(numbers) {
 
 
 	function getInNumericOrder_ifTheyAreStillNot(lists) {
-		for (let i = 0; i < lists.length; ++i) {
+		let length = lists.length;
+		for (let i = 0; i < length; ++i) {
 			if (lists[i].length > 0 && not(inNumericOrder(lists[i]))) {
 				lists[i] = getInNumericOrder(lists[i]);
 			}
