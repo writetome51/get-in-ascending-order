@@ -1,5 +1,6 @@
 import {getShuffled} from '@writetome51/array-get-shuffled';
 import {getInNumericOrder} from './index.js';
+import {getAdjacentAt} from '@writetome51/array-get-adjacent-at';
 
 
 // Test 1: make sure it triggers errors when passing incorrect values:
@@ -85,13 +86,16 @@ else console.log('test 5 FAILED');
 
 // test 6: speed test.  It should take less than 600 milliseconds:
 numbers = [];
-i = 1000001;
-while (--i >= 1) numbers.push(i);
+i = 20000000; // 20M
+while (--i >= 0) numbers.push(i);
+numbers = getShuffled(numbers);
+let length = numbers.length;
 console.log('beginning speed check:')
+
+
 console.time('speed check');
 result = getInNumericOrder(numbers);
 console.timeEnd('speed check');
-if (result.length === 1000000 && result[0] === 1 && result[result.length - 1] === 1000000)
-	console.log('Numbers sorted correctly in final test.\n' +
-		'If result of speed check is less than 610ms, test 6 passed');
-else console.log('Numbers sorted incorrectly in final test');
+if (result.length === length && result[0] === 0)
+	console.log('test 6 passed');
+else console.log('test 6 FAILED');

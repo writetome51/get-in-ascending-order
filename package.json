@@ -23,13 +23,14 @@
   },
   "homepage": "https://github.com/writetome51/get-in-numeric-order#readme",
   "devDependencies": {
-    "@writetome51/array-get-shuffled": "^2.0.0"
+    "@writetome51/array-get-shuffled": "^2.0.1",
+    "@writetome51/array-get-adjacent-at": "^2.0.2"
   },
   "dependencies": {
     "@writetome51/array-get-merged-arrays": "^2.0.0",
     "@writetome51/get-array-copy": "^1.0.0",
     "@writetome51/get-sum-average-product": "^2.0.1",
-    "@writetome51/in-numeric-order": "^2.0.0",
+    "@writetome51/in-numeric-order": "^2.0.1",
     "@writetome51/is-array-not-array": "^2.0.0",
     "@writetome51/not": "^2.0.0"
   }
