@@ -1,7 +1,6 @@
 # getInNumericOrder(numbers): number[]
 
-Returns new array of `numbers` in numeric order.  
-Each number inside `numbers` must be of type 'number', and must be a finite number.
+Returns new array of `numbers` in numeric order.
 
 
 ## Examples

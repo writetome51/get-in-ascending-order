@@ -1,6 +1,6 @@
 {
   "name": "@writetome51/get-in-numeric-order",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "Function takes an array of numbers and returns new array with numbers in numeric order",
   "type": "module",
   "main": "index.js",
@@ -11,10 +11,15 @@
   },
   "keywords": [
     "numbers",
+    "array",
+    "fast",
+    "quick",
+    "sort",
     "sorting",
     "ascending",
     "order",
-    "numeric"
+    "numeric",
+    "function"
   ],
   "author": "Steve Thompson",
   "license": "MIT",
@@ -24,14 +29,10 @@
   "homepage": "https://github.com/writetome51/get-in-numeric-order#readme",
   "devDependencies": {
     "@writetome51/array-get-shuffled": "^2.0.1",
-    "@writetome51/array-get-adjacent-at": "^2.0.2"
+    "@writetome51/array-get-adjacent-at": "^2.0.2",
+    "@writetome51/arrays-match": "^2.0.1"
   },
   "dependencies": {
-    "@writetome51/array-get-merged-arrays": "^2.0.0",
-    "@writetome51/get-array-copy": "^1.0.0",
-    "@writetome51/get-sum-average-product": "^2.0.1",
-    "@writetome51/in-numeric-order": "^2.0.1",
-    "@writetome51/is-array-not-array": "^2.0.0",
-    "@writetome51/not": "^2.0.0"
+    "@writetome51/get-array-copy": "^1.0.0"
   }
 }
