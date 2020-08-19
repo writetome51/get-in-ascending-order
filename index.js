@@ -1,5 +1,6 @@
 import {getArrayCopy} from '@writetome51/get-array-copy';
-import {quickSort} from './__privy.js';
+import TimSort from 'timsort';
+const sort = TimSort.sort;
 
 
 // Returns new array of `numbers` in ascending order.
@@ -7,6 +8,6 @@ import {quickSort} from './__privy.js';
 export function getInNumericOrder(numbers) {
 	let nums = getArrayCopy(numbers);
 	if (nums.length < 2) return nums;
-	quickSort(nums);
+	sort(nums, (a, b) => a - b);
 	return nums;
 }

@@ -2,81 +2,9 @@ import {getShuffled} from '@writetome51/array-get-shuffled';
 import {getInNumericOrder} from './index.js';
 import {getAdjacentAt} from '@writetome51/array-get-adjacent-at';
 
-
-// Test 1: make sure it triggers errors when passing incorrect values:
-let errorsTriggered = 0;
-try {
-	let ordered = getInNumericOrder();
-} catch (e) {
-	++errorsTriggered;
-}
-try {
-	let ordered = getInNumericOrder('0');
-} catch (e) {
-	++errorsTriggered;
-}
-try {
-	let ordered = getInNumericOrder('');
-} catch (e) {
-	++errorsTriggered;
-}
-try {
-	let ordered = getInNumericOrder({});
-} catch (e) {
-	++errorsTriggered;
-}
-try {
-	let ordered = getInNumericOrder(false);
-} catch (e) {
-	++errorsTriggered;
-}
-if (errorsTriggered === 5)
-	console.log('test 1 passed');
-else
-	console.log('test 1 FAILED');
-
-
-// Test 2: If array with only 1 number is passed, it should return it without error:
-let errorTriggered = false;
-try {
-	var result = getInNumericOrder([4]);
-} catch (e) {
-	errorTriggered = true;
-}
-if (errorTriggered) console.log('test 2 FAILED');
-else if (result.length === 1 && result[0] === 4) console.log('test 2 passed');
-
-
-let numbers = [];
-let i = 0;
-while (++i <= 100) numbers.push(i);
-let shuffledNumbers = getShuffled(numbers);
-
-// Test 3: make sure it sorts the shuffled numbers correctly:
-let firstNum = shuffledNumbers[0]; // save for later.
-result = getInNumericOrder(shuffledNumbers);
-if (result.length === 100 && result[0] === 1 && result[result.length - 1] === 100) {
-	console.log('test 3 passed');
-} else console.log('test 3 FAILED');
-
-
-// test 4: make sure shuffled array is still the same
-if (firstNum === shuffledNumbers[0]) console.log('test 4 passed');
-else console.log('test 4 FAILED');
-
-
-// test 5: make sure it handles without error a list of the same number repeated many times.
-numbers = [];
-i = 0;
-while (++i <= 20) numbers.push(1); // numbers is 1 repeated 20 times.
-result = getInNumericOrder(numbers);
-if (result.length === 20 && result[0] === 1 && result [19] === 1) console.log('test 5 passed');
-else console.log('test 5 FAILED');
-
-
 // test 6: speed test.
-numbers = [];
-i = 20000000; // 20M
+let numbers = [];
+let i = 20000000; // 20M
 let max = i - 1;
 while (--i >= 0) numbers.push(i);
 numbers = getShuffled(numbers);
@@ -85,10 +13,69 @@ console.log('beginning speed check:')
 
 
 console.time('speed check');
-result = getInNumericOrder(numbers);
+let result = getInNumericOrder(numbers);
 console.timeEnd('speed check'); // avg 5.17 seconds (to sort 20 million numbers).
 if (result.length === length && result[0] === 0 && result[result.length - 1] === max)
 	console.log('test 6 passed');
 else console.log('test 6 FAILED');
 
-console.log(getAdjacentAt(-20, 20, result));
+/**********************************************
+numbers = [];
+i = 0;
+while (++i < 100) numbers.push(1);
+length = numbers.length;
+console.time('speed check');
+result = getInNumericOrder(numbers);
+console.timeEnd('speed check'); // avg 5.17 seconds (to sort 20 million numbers).
+if (result.length === length && result[0] === 1 && result[result.length - 1] === 1)
+	console.log('test 6 passed');
+else console.log('test 6 FAILED');
+
+
+// Can it also work for sorting in alphabetical order?
+
+let chars = [
+	'z',
+	'c',
+	'k',
+	'1',
+	'v',
+	'm',
+	'a',
+	'2',
+	'o',
+	'r',
+	'n',
+	'x',
+	'zzz',
+	'e',
+	'q',
+	'w',
+	'e',
+	'z',
+	'c',
+	'k',
+	'1',
+	'v',
+	'm'
+];
+i = -1;
+while (++i < 10) chars = chars.concat(chars);
+console.time('quickSort');
+getInNumericOrder(chars);
+console.timeEnd('quickSort');
+// avg 0.108ms  (small array of 17 chars)
+// avg 0.177ms  (small array of 119 chars)
+// avg 222.62ms  (large array of 23,552 chars)
+
+console.time('Array.sort');
+chars.sort((a, b) => a - b);
+console.timeEnd('Array.sort');
+// avg. 0.017ms (small array of 17 chars)
+// Conclusion:  Array.sort() is faster than quickSort() for small array (17 chars).
+// avg 0.035ms (small array of 119 chars)
+// Conclusion:  Array.sort() is faster than quickSort() for small array (119 chars).
+// avg 1.78ms (large array of 23,552 chars)
+// Conclusion:  Array.sort() is faster for alphabetical sorting, no matter the array size.
+
+ *******************************/

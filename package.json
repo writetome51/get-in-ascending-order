@@ -1,6 +1,6 @@
 {
   "name": "@writetome51/get-in-numeric-order",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "Function takes an array of numbers and returns new array with numbers in numeric order",
   "type": "module",
   "main": "index.js",
@@ -13,7 +13,6 @@
     "numbers",
     "array",
     "fast",
-    "quick",
     "sort",
     "sorting",
     "ascending",
@@ -33,6 +32,7 @@
     "@writetome51/arrays-match": "^2.0.1"
   },
   "dependencies": {
-    "@writetome51/get-array-copy": "^1.0.0"
+    "@writetome51/get-array-copy": "^1.0.0",
+    "timsort": "^0.3.0"
   }
 }
