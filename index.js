@@ -3,6 +3,7 @@ import TimSort from 'timsort';
 
 
 // Returns new array of `numbers` in ascending order.
+// Should not be used for alphabetical sorting (use Array.sort for that).
 
 export function getInNumericOrder(numbers) {
 	const sort = TimSort.sort;
