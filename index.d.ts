@@ -1,2 +1,4 @@
-export declare function getInNumericOrder(numbers: number[]): number[];
-
+export declare function getInNumericOrder(
+	array: any[],
+	getValue?: (element: any) => number
+): any[];

@@ -2,13 +2,13 @@ import {getArrayCopy} from '@writetome51/get-array-copy';
 import TimSort from 'timsort';
 
 
-// Returns new array of `numbers` in ascending order.
-// Should not be used for alphabetical sorting (use Array.sort for that).
+// Returns new copy of `array` in ascending order.
+// Should not be used for alphabetical sorting (use Array.prototype.sort).
 
-export function getInNumericOrder(numbers) {
+export function getInNumericOrder(array, getValue = (element) => element) {
 	const sort = TimSort.sort;
-	let nums = getArrayCopy(numbers);
-	if (nums.length < 2) return nums;
-	sort(nums, (a, b) => a - b);
-	return nums;
+	let arr = getArrayCopy(array);
+	if (arr.length < 2) return arr;
+	sort(arr, (a, b) => getValue(a) - getValue(b));
+	return arr;
 }
