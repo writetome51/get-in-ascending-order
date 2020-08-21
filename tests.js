@@ -1,27 +1,56 @@
 import {getShuffled} from '@writetome51/array-get-shuffled';
 import {getInNumericOrder} from './index.js';
-import {getAdjacentAt} from '@writetome51/array-get-adjacent-at';
-import TimSort from 'timsort';
+import {getArrayFromProperty} from '@writetome51/get-array-from-property';
+import {arraysMatch} from '@writetome51/arrays-match';
+
+let arrays = [ [1,2,3], [1], [], [4,5], [0], [6,7], [4,5,6] ];
+console.log(getInNumericOrder(arrays, (arr) => arr.length));
+
+// test 0
+console.time('testing repeated items');
+let numbers = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+	1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
+let result = getInNumericOrder(numbers);
+console.timeEnd('testing repeated items');
+if (arraysMatch(numbers, result)) console.log('test 0 passed');
+else console.log('test 0 FAILED');
+
+// test 0A
+console.time('testing empty array');
+result = getInNumericOrder([]);
+console.timeEnd('testing empty array');
+if (result.length === 0) console.log('test 0A passed');
+else console.log('test 0A FAILED');
+
+// test 1
+console.time('testing object sorting');
+let objects = [{age: 12}, {age: 7}, {age: 18}, {age: 5}, {age: 2}];
+result = getInNumericOrder(objects, (obj) => obj.age);
+result = getArrayFromProperty('age', result);
+console.timeEnd('testing object sorting');
+if (arraysMatch(result, [2, 5, 7, 12, 18])) console.log('test 1 passed');
+else console.log('test 1 FAILED');
 
 // test 6: speed test.
-let numbers = [];
-let i = 20000000; // 20M
-let max = i - 1;
-while (--i >= 0) numbers.push(i);
+numbers = [];
+let i = -1;
+let max = 20000000; // 20M
+while (++i < max) numbers.push(i);
 numbers = getShuffled(numbers);
 let length = numbers.length;
-console.log('beginning speed check:')
+console.time('testing sorting 20 million numbers');
+result = getInNumericOrder(numbers);
+console.timeEnd('testing sorting 20 million numbers'); // avg 5.17 seconds (to sort 20 million numbers).
+if (result.length === length && result[0] === 0 && result[result.length - 1] === (max - 1))
+	console.log('test 2 passed');
+else console.log('test 2 FAILED');
 
 
-console.time('speed check');
-let result = getInNumericOrder(numbers);
-console.timeEnd('speed check'); // avg 5.17 seconds (to sort 20 million numbers).
-if (result.length === length && result[0] === 0 && result[result.length - 1] === max)
-	console.log('test 6 passed');
-else console.log('test 6 FAILED');
 
 
-// Can it also work for sorting in alphabetical order?
+/************************************
+
+ // Can it also work for sorting in alphabetical order?
 
 let chars = [
 	'z',
@@ -65,3 +94,4 @@ console.timeEnd('Array.sort');
 // avg 1.78ms (large array of 23,552 chars)
 // Conclusion:  Array.sort((a, b) => a < b ? -1 : 1) is faster for alphabetical sorting, no matter the array size.
 
+ **************************/
