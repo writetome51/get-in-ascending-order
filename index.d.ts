@@ -1,4 +1,4 @@
-export declare function getInNumericOrder(
+export declare function orderNumerically(
 	array: any[],
 	getValueToSortBy?: (element: any) => number
-): any[];
+): void;

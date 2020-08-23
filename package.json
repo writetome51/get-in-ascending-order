@@ -1,13 +1,13 @@
 {
-  "name": "@writetome51/get-in-numeric-order",
-  "version": "2.0.6",
+  "name": "@writetome51/order-numerically",
+  "version": "1.0.0",
   "description": "Function takes an array of numbers and returns new array with numbers in numeric order",
   "type": "module",
   "main": "index.js",
   "types": "index.d.ts",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/writetome51/get-in-numeric-order.git"
+    "url": "git+https://github.com/writetome51/order-numerically.git"
   },
   "keywords": [
     "numbers",
@@ -23,16 +23,15 @@
   "author": "Steve Thompson",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/writetome51/get-in-numeric-order/issues"
+    "url": "https://github.com/writetome51/order-numerically/issues"
   },
-  "homepage": "https://github.com/writetome51/get-in-numeric-order#readme",
+  "homepage": "https://github.com/writetome51/order-numerically#readme",
   "devDependencies": {
     "@writetome51/array-get-shuffled": "^2.0.1",
     "@writetome51/arrays-match": "^2.0.1",
     "@writetome51/get-array-from-property": "^2.0.1"
   },
   "dependencies": {
-    "@writetome51/get-array-copy": "^1.0.0",
     "timsort": "^0.3.0"
   }
 }

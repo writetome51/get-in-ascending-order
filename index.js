@@ -1,17 +1,15 @@
-import {getArrayCopy} from '@writetome51/get-array-copy';
 import TimSort from 'timsort';
 
 
-// Returns new copy of `array` in ascending order.
+// Re-orders `array` in ascending numeric order.
 // Should not be used for alphabetical sorting (use Array.prototype.sort).
 
-export function getInNumericOrder(
+export function orderNumerically(
 	array,
 	getValueToSortBy = (element) => element
 ) {
+	if (array.length < 2) return;
+
 	const sort = TimSort.sort;
-	let arr = getArrayCopy(array);
-	if (arr.length < 2) return arr;
-	sort(arr, (a, b) => getValueToSortBy(a) - getValueToSortBy(b));
-	return arr;
+	sort(array, (a, b) => getValueToSortBy(a) - getValueToSortBy(b));
 }
